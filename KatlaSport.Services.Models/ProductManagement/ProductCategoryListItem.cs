@@ -33,5 +33,7 @@ namespace KatlaSport.Services.ProductManagement
         public DateTime LastUpdated { get; set; }
 
         // TODO STEP 3 - Add "ProductCount" property here.
+
+        public int ProductCount { get; set; }
     }
 }
