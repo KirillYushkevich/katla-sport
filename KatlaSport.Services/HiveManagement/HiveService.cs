@@ -1,14 +1,14 @@
-﻿namespace KatlaSport.Services.HiveManagement
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using AutoMapper;
-    using KatlaSport.DataAccess;
-    using KatlaSport.DataAccess.ProductStoreHive;
-    using DbHive = KatlaSport.DataAccess.ProductStoreHive.StoreHive;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using KatlaSport.DataAccess;
+using KatlaSport.DataAccess.ProductStoreHive;
+using DbHive = KatlaSport.DataAccess.ProductStoreHive.StoreHive;
 
+namespace KatlaSport.Services.HiveManagement
+{
     /// <summary>
     /// Represents a hive service.
     /// </summary>
@@ -82,7 +82,7 @@
                 throw new RequestedResourceHasConflictException("code");
             }
 
-            dbHives = await _context.Hives.Where(p => p.Id == hiveId).ToArrayAsync();
+            dbHives = _context.Hives.Where(p => p.Id == hiveId).ToArray();
             if (dbHives.Length == 0)
             {
                 throw new RequestedResourceNotFoundException();
@@ -118,9 +118,23 @@
         }
 
         /// <inheritdoc/>
-        public Task SetStatusAsync(int hiveId, bool deletedStatus)
+        public async Task SetStatusAsync(int hiveId, bool deletedStatus)
         {
-            throw new NotImplementedException();
+            var dbHives = await _context.Hives.Where(c => hiveId == c.Id).ToArrayAsync();
+
+            if (dbHives.Length == 0)
+            {
+                throw new RequestedResourceNotFoundException();
+            }
+
+            var dbHive = dbHives[0];
+            if (dbHive.IsDeleted != deletedStatus)
+            {
+                dbHive.IsDeleted = deletedStatus;
+                dbHive.LastUpdated = DateTime.UtcNow;
+                dbHive.LastUpdatedBy = _userContext.UserId;
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

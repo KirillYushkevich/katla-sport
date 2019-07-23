@@ -11,14 +11,14 @@ namespace KatlaSport.Services.HiveManagement
         /// <summary>
         /// Gets a hives list.
         /// </summary>
-        /// <returns>A <see cref=" Task{List{HiveListItem}}"/>.</returns>
+        /// <returns>A <see cref="Task{List{HiveListItem}}"/>.</returns>
         Task<List<HiveListItem>> GetHivesAsync();
 
         /// <summary>
         /// Gets a hive with specified identifier.
         /// </summary>
         /// <param name="hiveId">A hive identifier.</param>
-        /// <returns>A <see cref="Hive"/>.</returns>
+        /// <returns>A <see cref="Task{Hive}"/>.</returns>
         Task<Hive> GetHiveAsync(int hiveId);
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace KatlaSport.Services.HiveManagement
         /// Deletes an existed hive.
         /// </summary>
         /// <param name="hiveId">A hive identifier.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <returns>A <see cref="Task"/>.</returns>
         Task DeleteHiveAsync(int hiveId);
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace KatlaSport.Services.HiveManagement
         /// </summary>
         /// <param name="hiveId">A hive identifier.</param>
         /// <param name="deletedStatus">Status.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <returns>A <see cref="Task"/>.</returns>
         Task SetStatusAsync(int hiveId, bool deletedStatus);
     }
 }

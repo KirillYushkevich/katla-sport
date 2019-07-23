@@ -24,8 +24,6 @@ namespace KatlaSport.DataAccess.ProductCatalogue
         /// </summary>
         public string Code { get; set; }
 
-        // TODO STEP 2 - Add "Description, ManufacturerCode and Price" properties here.
-
         /// <summary>
         /// Gets or sets a product description.
         /// </summary>

@@ -65,19 +65,18 @@
     <Compile Include="Migrations\201805190719490_InitialCreate.Designer.cs">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906170142467_AddCategoryDescription.cs" />
-    <Compile Include="Migrations\201906170142467_AddCategoryDescription.Designer.cs">
-      <DependentUpon>201906170142467_AddCategoryDescription.cs</DependentUpon>
+    <Compile Include="Migrations\201906130753421_AddCategoryDescription.cs" />
+    <Compile Include="Migrations\201906130753421_AddCategoryDescription.Designer.cs">
+      <DependentUpon>201906130753421_AddCategoryDescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906170225486_AddProductDescriptionManCodePrice.cs" />
-    <Compile Include="Migrations\201906170225486_AddProductDescriptionManCodePrice.Designer.cs">
-      <DependentUpon>201906170225486_AddProductDescriptionManCodePrice.cs</DependentUpon>
+    <Compile Include="Migrations\201906130833579_AddProductDescriptionManCodePrice.cs" />
+    <Compile Include="Migrations\201906130833579_AddProductDescriptionManCodePrice.Designer.cs">
+      <DependentUpon>201906130833579_AddProductDescriptionManCodePrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
@@ -87,11 +86,11 @@
     <EmbeddedResource Include="Migrations\201805190719490_InitialCreate.resx">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906170142467_AddCategoryDescription.resx">
-      <DependentUpon>201906170142467_AddCategoryDescription.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906130753421_AddCategoryDescription.resx">
+      <DependentUpon>201906130753421_AddCategoryDescription.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906170225486_AddProductDescriptionManCodePrice.resx">
-      <DependentUpon>201906170225486_AddProductDescriptionManCodePrice.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906130833579_AddProductDescriptionManCodePrice.resx">
+      <DependentUpon>201906130833579_AddProductDescriptionManCodePrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
