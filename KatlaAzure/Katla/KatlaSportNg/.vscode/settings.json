@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": "dist\\katla-front",
+    "appService.defaultWebAppToDeploy": "None"
+}

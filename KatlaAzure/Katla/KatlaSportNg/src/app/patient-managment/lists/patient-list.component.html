@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>patient List</h2>
+    <table class="table table-nonfluid">
+      <thead>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Doctor ID</th>
+        <th scope="col">Age</th>
+        <th scope="col">Case History Number</th>
+        <th scope="col"></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <th scope="row">{{patient.id}}</th>
+          <th scope="row">{{patient.name}}</th>
+          <th scope="row">{{patient.surname}}</th>
+          <th scope="row">{{patient.doctorId}}</th>
+          <th scope="row">{{patient.age}}</th>
+          <th scope="row">{{patient.caseHistoryNumber}}</th>
+          <td>
+            <span class="btn-toolbar" role="toolbar" aria-label="Hive action buttons" style="display: block; white-space:nowrap;">            
+                <div class="btn-group mr-2" role="group" aria-label="Delete group"  (click)="onDelete(patient.id)">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+              <div class="btn-group" role="group" aria-label="Edit group">
+                <button routerLink="/patient/{{patient.id}}" type="button" class="btn btn-primary">Edit</button>
+              </div>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn-toolbar" role="toolbar" aria-label="Action buttons">
+      <div class="btn-group" role="group" aria-label="New group">
+        <button routerLink="/patient" type="button" class="btn btn-primary">New patient</button>
+      </div>
+    </div>
+  </div>
+  
+  
